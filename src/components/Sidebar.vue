@@ -23,5 +23,7 @@
 const menuItems = [
   { title: 'Home', icon: 'mdi-view-dashboard', route: '/' },
   { title: 'About', icon: 'mdi-account-group', route: '/about' },
+  { title: 'Best Practise', icon: 'mdi-account-group', route: '/best-practise' },
+
 ]
 </script>
