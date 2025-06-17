@@ -1,0 +1,9 @@
+@use "sass:math";
+
+@for $i from 10 through 20 {
+  .fs-#{$i} {
+    font-size: #{math.div($i, 10)}rem;
+  }
+}
+
+$green: #848e4f;

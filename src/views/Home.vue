@@ -1,5 +1,4 @@
 <script setup>
-import WelcomeItem from '../components/WelcomeItem.vue'
 import DocumentationIcon from '../components/icons/IconDocumentation.vue'
 import ToolingIcon from '../components/icons/IconTooling.vue'
 import EcosystemIcon from '../components/icons/IconEcosystem.vue'
@@ -10,43 +9,11 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
 </script>
 
 <template>
-  <WelcomeItem>
-    <template #icon>
-      <DocumentationIcon />
-    </template>
-    <template #heading>Documentation</template>
-
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <ToolingIcon />
-    </template> 
-    <template #heading>Tooling TEST</template>
-
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <EcosystemIcon />
-    </template>
-    <template #heading>Ecosystem</template>
-
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <CommunityIcon />
-    </template>
-    <template #heading>Community</template>
-
-  </WelcomeItem>
-
-  <WelcomeItem>
-    <template #icon>
-      <SupportIcon />
-    </template>
-    <template #heading>Support</template>
-
-  </WelcomeItem>
+  <div class="container  vh-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 text-center">
+        <h1>Benvenuto su DEV Bible!</h1>
+      </div>
+    </div>
+  </div>
 </template>

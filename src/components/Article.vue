@@ -1,9 +1,7 @@
 <template>
-  <div class="searchable-item m-2" :data-label="label" ref="el">
+  <li class="article" :data-label="label" ref="el">
+    <h2>{{label}}</h2>
     <v-card variant="tonal">
-      <template #title>
-        <slot name="title">Titolo di default</slot>
-      </template>
 
       <template #subtitle>
         <slot name="subtitle">Sottotitolo di default</slot>
@@ -16,7 +14,7 @@
 
     <!-- Slot generico (se vuoi sotto la card, o altrove) -->
     <slot />
-  </div>
+  </li>
 </template>
 
 <script setup>

@@ -1,29 +1,66 @@
 <template>
   <v-navigation-drawer app permanent>
-    <v-list nav dense>
-      <v-list-item
-        v-for="item in menuItems"
-        :key="item.title"
-        :to="item.route"
-        link
-        :active-class="'v-list-item--active'"
-      >
-        <v-list-item-icon>
-          <v-icon>{{ item.icon }}</v-icon>
-        </v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
+     <v-list lines="two">
+      <template v-for="(item, index) in items">
+        <v-list-subheader
+          v-if="item.header"
+          :key="item.header"
+          inset
+        >
+          {{ item.header }}
+        </v-list-subheader>
+
+        <v-divider class="m-0"
+          v-else-if="item.divider"
+          :key="index"
+          inset
+        ></v-divider>
+
+        <v-list-item
+          v-else
+          :key="item.title"
+          :prepend-avatar="item.avatar"
+          ripple
+          :active-class="'v-list-item--active'"
+          :to="item.route"
+        >
+          <template v-slot:title>
+            <div v-html="item.title"></div>
+          </template>
+
+          <template v-slot:subtitle>
+            <div v-html="item.subtitle"></div>
+          </template>
+        </v-list-item>
+      </template>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script setup>
-const menuItems = [
-  { title: 'Home', icon: 'mdi-view-dashboard', route: '/' },
-  { title: 'About', icon: 'mdi-account-group', route: '/about' },
-  { title: 'Best Practise', icon: 'mdi-account-group', route: '/best-practise' },
 
-]
+ const items = [
+    {
+      header: 'Get started',
+    },
+    { divider: true },
+    {
+      avatar: '',
+      title: 'How to - new project',
+      subtitle: ``,
+      route: '/how-to'
+    },
+
+    {
+      header: 'LARAVEL',
+    },
+    { divider: true },
+    {
+      avatar: '',
+      title: 'Best Practise',
+      subtitle: '',
+      route: '/best-practise'
+    },
+
+  ]
 </script>
