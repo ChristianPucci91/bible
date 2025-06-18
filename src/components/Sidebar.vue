@@ -58,7 +58,10 @@
     {
       avatar: '',
       title: 'Best Practise',
-      subtitle: '',
+      subtitle: `
+        <div class="my-2">- Scaffholding laravel</div>
+        <div class="my-2">- Modelli, metodi, relations</div>
+      `,
       route: '/best-practise'
     },
 

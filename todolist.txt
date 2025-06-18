@@ -66,4 +66,6 @@ Rate limiting su API e login
 
 Usare Gate/Policy per i permessi
 
+7. sanificazione degli input
+
 

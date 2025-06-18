@@ -1,6 +1,6 @@
 <template>
   <li class="article" :data-label="label" ref="el">
-    <h2>{{label}}</h2>
+    <h2 class="pb-2">{{label}}</h2>
     <v-card variant="tonal">
 
       <template #subtitle>

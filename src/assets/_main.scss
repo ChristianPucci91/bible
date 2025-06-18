@@ -24,5 +24,17 @@
 
 code{
   color: variables.$green !important;
+  &.no-bg{
+    padding: 0 !important;
+  }
+}
+pre,.hljs{
+  background-color: variables.$black !important;
+  width: fit-content;
+    padding: 1rem;
+  border-radius: 8px;
+  &.no-bg{
+    padding: 0 !important;
+  }
 }
 

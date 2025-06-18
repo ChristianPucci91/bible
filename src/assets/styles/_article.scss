@@ -1,7 +1,10 @@
+@use './_variables.scss' as variables;
+
 .article{
 
     width: 100%;
-
+    margin:5% 0;
+    
     .main-list{
         li{
             font-size: 1.2rem;
@@ -36,7 +39,22 @@
 
     p{
         margin: 10px 0;
+        // padding: 0.5rem;
+        font-size: 1.0rem;
+    }
+
+    .subtitle-span{
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 10px 0;
+        color: variables.$ice !important;
+    }
+
+    .comments{
+        margin: 10px 0;
         padding: 0.5rem;
         font-size: 1.0rem;
+        color: white !important;
+        border-radius: 5px;
     }
 }

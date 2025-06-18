@@ -9,10 +9,16 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import '@mdi/font/css/materialdesignicons.css' // **IMPORTA QUI LE ICONE**
 
 //Bootstrap 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+
+/// Importing Highlight.js for syntax highlighting
+import VueHighlightJS from 'vue-highlightjs'
+import 'highlight.js/styles/a11y-dark.css' // puoi cambiare stile
+import 'highlight.js/lib/common' // importa i linguaggi base
 
 const vuetify = createVuetify({
   components,
@@ -49,5 +55,7 @@ const vuetify = createVuetify({
 const app = createApp(App)
 
 app.use(router)
-app.use(vuetify)    
+app.use(vuetify)
+app.use(VueHighlightJS)
+   
 app.mount('#app')

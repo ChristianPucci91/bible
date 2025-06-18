@@ -1,5 +1,6 @@
 <script setup>
     import Article from '../../../components/Article.vue'
+    import CodeBlock from '../../../components/CodeBlock.vue'
     import { defineProps, ref, defineExpose } from 'vue'
 
     const articleRef = ref(null)
@@ -16,6 +17,7 @@
     const props = defineProps({
      label: String
     })
+
 </script>
 <template>
     <Article :label="label" ref="articleRef">
@@ -34,24 +36,24 @@
                     <h4 class="my-4">Struttura folders funzionalità</h4>
                     <ol class="normal-list">
                         <li>
-                            <span>Overview:</span>
+                            <span class="subtitle-span">Overview:</span>
 
                             <ul class="normal-list">
                                 <li>
                                     <code>Controllers/Admin </code>
-                                    <span><em>Se il tuo progetto prevede funzionalità per ruoli</em></span>
+                                    <span><em class="comments">Se il tuo progetto prevede funzionalità per ruoli</em></span>
                                 </li>
                                 <li>
                                     <code>Controllers/Api </code>
-                                    <span><em>Se il tuo progetto prevede delle API</em></span>
+                                    <span><em class="comments">Se il tuo progetto prevede delle API</em></span>
                                 </li>
                                 <li>
                                     <code>Controllers/Auth </code>
-                                    <span><em>Se il tuo progetto prevede delle funzionalità legate a chi è autenticato</em></span>
+                                    <span><em class="comments">Se il tuo progetto prevede delle funzionalità legate a chi è autenticato</em></span>
                                 </li>
                                 <li>
                                     <code>Controllers/Guest </code>
-                                    <span><em>Se il tuo progetto prevede delle funzionalità legate a chi NON è autenticato</em></span>
+                                    <span><em class="comments">Se il tuo progetto prevede delle funzionalità legate a chi NON è autenticato</em></span>
                                 </li>
                             </ul>
 
@@ -64,7 +66,7 @@
                         </li>
 
                         <li>
-                            <p>Organizzazione per feature/domain-driven</p>
+                            <span class="subtitle-span">Organizzazione per feature/domain-driven</span>
                             <p>Invece di avere una cartella Controllers o Models unica, puoi raggruppare i file per dominio o funzionalità del business. Es:</p>
                             <ul class="normal-list code">
                                 <li>
@@ -148,7 +150,7 @@
                         </li>
 
                         <li>
-                            <p>Separazione chiara dei ruoli (design pattern)</p>
+                            <span class="subtitle-span">Separazione chiara dei ruoli (design pattern)</span>
                             <ul class="normal-list">
                                 <li><strong>Models:</strong> Solo modelli Eloquent (in <code>app/Models</code> o in un namespace <code>Domain\Model</code>).</li>
                                 <li><strong>Controllers:</strong> Controllano il flusso HTTP, risposte, validazioni, e chiamano servizi.</li>
@@ -168,7 +170,7 @@
                         </li>
 
                         <li>
-                            <p>Service Layer (Business Logic)</p>
+                            <span class="subtitle-span">Service Layer (Business Logic)</span>
                             <p>Non mettere tutta la logica di business nel controller o nel modello. Usa una cartella Services o Actions:</p>
                             <ul class="normal-list code">
                                 <li>
@@ -193,7 +195,7 @@
                             </ul>
                         </li>
                         <li>
-                            <p>Form Request per validazioni</p>
+                            <span class="subtitle-span">Form Request per validazioni</span>
                             <p>Separare la validazione in classi specifiche:</p>
                             <ul class="normal-list code">
                                 <li>
@@ -219,7 +221,7 @@
                             </ul>
                         </li>
                         <li>
-                            <p>Repository Pattern (opzionale)</p>
+                            <span class="subtitle-span">Repository Pattern (opzionale)</span>
                             <p>Per evitare dipendenza diretta da Eloquent e facilitare testing, puoi creare un repository per ogni modello:</p>
                             <ul class="normal-list code">
                                 <li>
@@ -243,7 +245,7 @@
                             </ul>
                         </li>
                         <li>
-                            <p>Domain Event & Listener</p>
+                            <span class="subtitle-span">Domain Event & Listener</span>
                             <p>Usare eventi per le azioni asincrone:</p>
                             <ul class="normal-list code">
                                 <li>
@@ -277,7 +279,7 @@
                     <h4 class="my-4">Struttura folders viste, assets e files</h4>
                     <ol class="normal-list">
                         <li>
-                            <p>Organizzazione Routes</p>
+                            <span class="subtitle-span">Organizzazione Routes</span>
                             <p>Organizza le rotte in file separati in routes/</p>
                             <ul class="normal-list">
                                 <li>web.php</li>
@@ -287,7 +289,7 @@
                             </ul>
                         </li>
                         <li>
-                            <p>Organizza per sezione o dominio:</p>
+                            <span class="subtitle-span">Organizza per sezione o dominio:</span>
                             <p>Evita di avere tutte le view in un’unica cartella. Struttura le cartelle per area funzionale:</p>
                             <ul class="normal-list code">
                                 <li>
@@ -341,7 +343,7 @@
                             </ul>
                         </li>
                         <li>
-                            <p>Usa <code>partials/</code> per componenti riutilizzabili</p>
+                            <span class="subtitle-span">Usa <code>partials/</code> per componenti riutilizzabili</span>
                             <p>Per menu, sidebar, alert, modali:</p>
                             <ul class="normal-list code">
                                 <li>
@@ -368,7 +370,7 @@
                             </ul>
                         </li>
                         <li>
-                            <p>Ecco una struttura di esempio per gli assets</p>
+                            <span class="subtitle-span">Ecco una struttura di esempio per gli assets</span>
                             <ul class="normal-list code">
                                 <li>
                                     <code>
@@ -378,22 +380,22 @@
                                                 css/
                                                 <ul>
                                                     <li>
-                                                        app.css <em>&larr; punto di ingresso vite </em>
+                                                        app.css <em class="comments">&larr; punto di ingresso vite </em>
                                                     </li>
                                                     <li>
-                                                        main.scss <em>&larr; file principale SCSS (se usi Sass) </em>
+                                                        main.scss <em class="comments">&larr; file principale SCSS (se usi Sass) </em>
                                                     </li>
                                                     <li>
                                                         variables/
                                                         <ul>
                                                             <li>
-                                                                _colors.scss <em>&larr; variabili di colori </em>
+                                                                _colors.scss <em class="comments">&larr; variabili di colori </em>
                                                             </li>
                                                             <li>
-                                                                _typography.scss <em>&larr; font, grandezze </em>
+                                                                _typography.scss <em class="comments">&larr; font, grandezze </em>
                                                             </li>
                                                             <li>
-                                                                _spacings.scss <em>&larr; margini, padding </em>
+                                                                _spacings.scss <em class="comments">&larr; margini, padding </em>
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -401,10 +403,10 @@
                                                         components/
                                                         <ul>
                                                             <li>
-                                                                _button.scss <em>&larr; stili per i bottoni </em>
+                                                                _button.scss <em class="comments">&larr; stili per i bottoni </em>
                                                             </li>
                                                             <li>
-                                                                _card.scss <em>&larr; stili per le card </em>
+                                                                _card.scss <em class="comments">&larr; stili per le card </em>
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -414,16 +416,16 @@
                                                 js/
                                                 <ul>
                                                     <li>
-                                                        app.js <em>&larr; punto di ingresso vite </em>
+                                                        app.js <em class="comments">&larr; punto di ingresso vite </em>
                                                     </li>
                                                     <li>
                                                         components/
                                                         <ul>
                                                             <li>
-                                                                Navbar.vue <em>&larr; componente navbar </em>
+                                                                Navbar.vue <em class="comments">&larr; componente navbar </em>
                                                             </li>
                                                             <li>
-                                                                Modal.vue <em>&larr; componente modale </em>
+                                                                Modal.vue <em class="comments">&larr; componente modale </em>
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -432,6 +434,47 @@
                                         </ul>
                                     </code>
                                 </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="subtitle-span">Storage</span>
+                            <p>Usa la directory <code>storage/app</code> per file privati</p>
+                            <p>Usa la directory <code>storage/app/public</code> per file pubblici e crea un link simbolico</p>
+                            <p>Cloud storage (Amazon S3, Google Cloud, Azure, etc.):</p>
+                            <ul class="normal-list">
+                                                     
+                                <li>Usa driver cloud per scalabilità e disponibilità.</li>
+                                <li>Usa driver cloud per scalabilità e disponibilità.</li>
+                                <li>Usa driver cloud per scalabilità e disponibilità.</li>
+                                <li>Usa driver cloud per scalabilità e disponibilità.</li>
+                        
+                            </ul>
+                                <CodeBlock :code="`Storage::disk('s3')->put('documenti/riservato.pdf', $content, 'private');`" language="php" />                                
+
+                            <div>
+                                <p>Configurazione S3 esempio:</p>
+                                <CodeBlock :code="`AWS_ACCESS_KEY_ID=xxx\nAWS_SECRET_ACCESS_KEY=xxx\nAWS_DEFAULT_REGION=eu-central-1\nAWS_BUCKET=nome-bucket\nAWS_URL=https://bucket.s3.amazonaws.com\n`" language="ini" />
+                            </div>
+                            <div>
+                                <p>Nel <code>config/filesystems.php</code>:</p>
+                                <CodeBlock :code="`<?php\n's3' => [\n    'driver' => 's3',\n    'key' => env('AWS_ACCESS_KEY_ID'),\n    'secret' => env('AWS_SECRET_ACCESS_KEY'),\n    'region' => env('AWS_DEFAULT_REGION'),\n    'bucket' => env('AWS_BUCKET'),\n    'url' => env('AWS_URL'),\n    'visibility' => 'private',\n],\n?>`" language="php" />
+                            </div>
+                            <p>Best practice generale</p>
+                            <ul class="normal-list">
+                                                     
+                                <li>Usa sottocartelle per tipologie: invoices/, avatars/, logs/, ecc.</li>
+                                <li>Evita nomi di file prevedibili (usa <code>Str::uuid()</code> o hash).</li>
+                                <li>Controlla sempre la dimensione massima dei file e tipo MIME in upload.</li>
+                                <li>Proteggi l’accesso ai file con autenticazione/autorizzazione dove necessario.</li>
+                        
+                            </ul>
+                            <p>Best practice backup</p>
+                            <ul class="normal-list">
+                                                     
+                                <li>Backup automatici con Laravel Spatie Backup.</li>
+                                <li>Sincronizza contenuti statici da local a cloud per distribuzione CDN.</li>
+                                <li>Salva i backup critici in dischi separati (s3, local-backup, ecc.).</li>
+                        
                             </ul>
                         </li>
                     </ol>
