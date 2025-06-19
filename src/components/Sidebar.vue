@@ -46,9 +46,11 @@
     { divider: true },
     {
       avatar: '',
-      title: 'How to - new project',
-      subtitle: ``,
-      route: '/how-to'
+      title: 'Mantra',
+      subtitle: `
+        <div class="my-2">- Naming variabili, funzioni</div>
+      `,
+      route: '/mantra'
     },
 
     {
