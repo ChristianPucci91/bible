@@ -152,6 +152,42 @@
                         </li>
                     </ul>       
                 </li>
+                <li>
+                    <span class="subtitle-span">Quando ha senso creare una classe base da estendere</span>
+                    <ul class="normal-list">
+                        <li>
+                            Hai modelli diversi (es. User, Admin, Client) che devono fare cose simili?<br>
+                            Crea una BaseModel e centralizza lì i metodi comuni.
+                        </li>
+                    </ul>
+                    <CodeBlock 
+                    :code="`class BaseModel extends Model\n{\n    public static function active()\n    {\n        return static::where(\'active\', true);\n    }\n\n    public function fullName()\n    {\n        return '{\$this->first_name} {\$this->last_name}';\n    }\n}\n\nclass User extends BaseModel {}\nclass Admin extends BaseModel {}`" 
+                    language="php" 
+                    />
+
+                    <p>Ora puoi scrivere:</p>
+
+                    <CodeBlock 
+                    :code='`$users = User::active()->get();\n$admin = Admin::active()->first();`' 
+                    language="php" 
+                    />
+
+                    <h3>Quando NON farlo</h3>
+                    <ul class="normal-list">
+                        <li>
+                            Se hai solo 1 o 2 modelli: troppa astrazione inutile
+                        </li>
+                        <li>
+                            Se i modelli hanno logiche completamente diverse
+                        </li>
+                        <li>
+                            Se stai forzando l’ereditarietà per evitare l’uso di trait (i trait sono ottimi in Laravel!)
+                        </li>
+                    </ul>
+
+
+                        
+                </li>
             </ol>
 
         </template>

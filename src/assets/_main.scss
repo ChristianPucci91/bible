@@ -38,3 +38,7 @@ pre,.hljs{
   }
 }
 
+.v-list-item--two-line .v-list-item-subtitle {
+  -webkit-line-clamp: none;
+}
+

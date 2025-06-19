@@ -61,6 +61,7 @@
       subtitle: `
         <div class="my-2">- Scaffholding laravel</div>
         <div class="my-2">- Modelli, metodi, relations</div>
+        <div class="my-2">- Controllers e funzioni</div>
       `,
       route: '/best-practise'
     },
