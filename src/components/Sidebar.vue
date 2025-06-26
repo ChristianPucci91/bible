@@ -48,6 +48,8 @@
       avatar: '',
       title: 'Mantra',
       subtitle: `
+        <div class="my-2">- Checklist pre progetto</div>
+        <div class="my-2">- Best practices e tips</div>
         <div class="my-2">- Naming variabili, funzioni</div>
       `,
       route: '/mantra'
@@ -66,6 +68,24 @@
         <div class="my-2">- Controllers e funzioni</div>
       `,
       route: '/best-practise'
+    },
+    {
+      avatar: '',
+      title: 'Tests',
+      subtitle: `
+        <div class="my-2">- Unit tests</div>
+      `,
+      route: '/tests'
+    },
+    {
+      avatar: '',
+      title: 'Handlers',
+      subtitle: `
+        <div class="my-2">- File Upload</div>
+        <div class="my-2">- Mail</div>
+        <div class="my-2">- DataTable</div>
+      `,
+      route: '/handlers'
     },
 
   ]

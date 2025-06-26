@@ -33,5 +33,7 @@ watch(() => props.code, highlight)
 </script>
 
 <style scoped>
-
+pre{
+  margin: 20px 0;
+}
 </style>
